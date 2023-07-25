@@ -15,8 +15,8 @@ import java.util.logging.Logger;
 public class DBConnection {//Lớp này giải quyết kết nối xử lý truy vấn
 
     private static String hostName = "localhost";
-    private static String acc = "nam123";
-    private static String pass = "123456789";
+    private static String acc = "nam";
+    private static String pass = "123";
     private static String dbName = "duan1";
     private static String connectionSql
             = "jdbc:sqlserver://" + hostName + ":1433;databaseName=" + dbName + ";encrypt=true;trustServerCertificate=true";

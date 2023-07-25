@@ -8,18 +8,18 @@ package models;
  *
  * @author duong
  */
-public class MauSac {
+public class NSX {
     private int id;
     private String ma;
-    private String mauSac;
+    private String ten;
 
-    public MauSac() {
+    public NSX() {
     }
 
-    public MauSac(int id, String ma, String mauSac) {
+    public NSX(int id, String ma, String ten) {
         this.id = id;
         this.ma = ma;
-        this.mauSac = mauSac;
+        this.ten = ten;
     }
 
     public int getId() {
@@ -38,16 +38,15 @@ public class MauSac {
         this.ma = ma;
     }
 
-    public String getMauSac() {
-        return mauSac;
+    public String getTen() {
+        return ten;
     }
 
-    public void setMauSac(String mauSac) {
-        this.mauSac = mauSac;
+    public void setTen(String ten) {
+        this.ten = ten;
     }
-    
     @Override
     public String toString() {
-        return mauSac;
+        return ten;
     }
 }

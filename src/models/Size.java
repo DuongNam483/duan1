@@ -8,18 +8,18 @@ package models;
  *
  * @author duong
  */
-public class MauSac {
+public class Size {
     private int id;
     private String ma;
-    private String mauSac;
+    private String kichCo;
 
-    public MauSac() {
+    public Size() {
     }
 
-    public MauSac(int id, String ma, String mauSac) {
+    public Size(int id, String ma, String kichCo) {
         this.id = id;
         this.ma = ma;
-        this.mauSac = mauSac;
+        this.kichCo = kichCo;
     }
 
     public int getId() {
@@ -38,16 +38,16 @@ public class MauSac {
         this.ma = ma;
     }
 
-    public String getMauSac() {
-        return mauSac;
+    public String getKichCo() {
+        return kichCo;
     }
 
-    public void setMauSac(String mauSac) {
-        this.mauSac = mauSac;
+    public void setKichCo(String kichCo) {
+        this.kichCo = kichCo;
     }
-    
+
     @Override
     public String toString() {
-        return mauSac;
+        return kichCo;
     }
 }
