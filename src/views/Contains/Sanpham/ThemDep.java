@@ -24,6 +24,7 @@ public class ThemDep extends javax.swing.JFrame {
     public ThemDep() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
 
     public void fillTable() {

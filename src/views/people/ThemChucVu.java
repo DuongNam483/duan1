@@ -23,6 +23,7 @@ public class ThemChucVu extends javax.swing.JFrame {
     public ThemChucVu() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
     public void fillTable(){
         List<ChucVu> list = sv.getAll();

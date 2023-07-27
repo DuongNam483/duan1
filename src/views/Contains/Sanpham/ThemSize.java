@@ -23,6 +23,7 @@ public class ThemSize extends javax.swing.JFrame {
     public ThemSize() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
     public void fillTable() {
         List<Size> list = sv.getAll();

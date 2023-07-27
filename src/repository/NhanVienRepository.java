@@ -88,21 +88,28 @@ public class NhanVienRepository {
         return nv;
     }
         public NhanVien getByTen(String ten){
-        NhanVien cl = null;
+        NhanVien nv = null;
         try {
             Connection conn = DBConnection.openDbConnection();
-            String sql = "select * from ChucVu where Ten = ?";
+            String sql = "select * from NhanVien where Ten = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, ten);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()){
-                int id = rs.getInt("ID");
-                String ma = rs.getString("Ma");
-                String t = rs.getString("Ten");
-                cl.setId(id);
-                cl.setMa(ma);
-                cl.setTen(t);
+                int id = rs.getInt(1);
+                int idCV = rs.getInt(2);
+                String maCTD = rs.getString(3);
+                String tenNV = rs.getString(4);
+                Date d1 = rs.getDate(5);
+                LocalDate ngaySinh = d1.toLocalDate();
+                String email = rs.getString(6);
+                String sdt = rs.getString(7);
+                boolean gioiTinh = rs.getBoolean(8);
+                String diaChi = rs.getString(9);
+                String taiKhoan = rs.getString(10);
+                String mk = rs.getString(11);
+                nv = new NhanVien(id, idCV, maCTD, tenNV, ngaySinh, email, sdt, gioiTinh, diaChi,taiKhoan, mk);
             }
             
             
@@ -110,7 +117,7 @@ public class NhanVienRepository {
             //Logger.getLogger(GradeRepository.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();   
         }
-        return cl;
+        return nv;
     }
     
     public boolean add(NhanVien ctd){
@@ -119,7 +126,7 @@ public class NhanVienRepository {
             System.out.println(ctd.getNgaySinh());
             DBConnection.ExcuteUpdate(sql, ctd.getIdCV(), ctd.getMa(), ctd.getTen(), ctd.getNgaySinh(), ctd.getEmail(), ctd.getSdt(),
                 ctd.isGioiTinh(), ctd.getDiaChi(),ctd.getTaiKhoan(), ctd.getMaKhau());
-            System.out.println("Nam");
+            
             return true;
         }catch (Exception e){
             e.printStackTrace();

@@ -24,6 +24,7 @@ public class ThemLoaiDep extends javax.swing.JFrame {
     public ThemLoaiDep() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
 
     public void fillTable() {

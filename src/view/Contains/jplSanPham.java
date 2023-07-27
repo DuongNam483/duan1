@@ -377,7 +377,7 @@ public class jplSanPham extends javax.swing.JPanel {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Loại dép"));
 
-        btnLoaiDep.setText("jButton2");
+        btnLoaiDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnLoaiDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoaiDepActionPerformed(evt);
@@ -407,7 +407,7 @@ public class jplSanPham extends javax.swing.JPanel {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Dép"));
 
-        btnThemDep.setText("jButton2");
+        btnThemDep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnThemDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemDepActionPerformed(evt);
@@ -432,12 +432,12 @@ public class jplSanPham extends javax.swing.JPanel {
                 .addComponent(cbbDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnThemDep)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Kích cỡ\n"));
 
-        btnSize.setText("jButton2");
+        btnSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnSize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSizeActionPerformed(evt);
@@ -467,7 +467,7 @@ public class jplSanPham extends javax.swing.JPanel {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Màu sắc"));
 
-        btnMauSac.setText("jButton2");
+        btnMauSac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnMauSac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMauSacActionPerformed(evt);
@@ -497,7 +497,7 @@ public class jplSanPham extends javax.swing.JPanel {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Nhà sản xuất"));
 
-        btnNSX.setText("jButton2");
+        btnNSX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnNSX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNSXActionPerformed(evt);
@@ -527,7 +527,7 @@ public class jplSanPham extends javax.swing.JPanel {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Chất liệu"));
 
-        btnChatLieu.setText("jButton2");
+        btnChatLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editing.png"))); // NOI18N
         btnChatLieu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChatLieuActionPerformed(evt);
@@ -584,7 +584,7 @@ public class jplSanPham extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

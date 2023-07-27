@@ -23,6 +23,7 @@ public class ThemNSX extends javax.swing.JFrame {
     public ThemNSX() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
 
     public void fillTable() {

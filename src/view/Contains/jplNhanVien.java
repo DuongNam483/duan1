@@ -81,14 +81,11 @@ public class jplNhanVien extends javax.swing.JPanel {
             return "Mã không được để trống.";
         } else {
             nv = sv.getNVByMa(ma);
-            System.out.println(id);
             if (nv != null) {
                 if (id == 0) {
-                    System.out.println("ha");
                     return "Mã đã tồn tại.";
                 } else if (id > 0) {
-                    if (nv.getId() == id) {
-                        System.out.println("h1");
+                    if (nv.getId() != id) {
                         return "Mã đã tồn tại.";
                     }
                 }
@@ -443,7 +440,6 @@ public class jplNhanVien extends javax.swing.JPanel {
         Date date1 = txtNgaySinh.getDate();
         System.out.println(date1);
         LocalDate ngaySinh = date1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println(ngaySinh);
         String email = txtEmail.getText();
         String sdt = txtSDT.getText();
         boolean gioiTinh = rdoNam.isSelected() ? true : false;
@@ -490,7 +486,6 @@ public class jplNhanVien extends javax.swing.JPanel {
         txtDiaChi.setText(listNV.get(index).getDiaChi());
         int cv = listNV.get(index).getIdCV();
         String a = null;
-        System.out.println(cv);
         if (cv == 2) {
             a = "Nhân viên";
         } else if (cv == 1) {
@@ -520,7 +515,7 @@ public class jplNhanVien extends javax.swing.JPanel {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-
+        clear();
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
@@ -531,8 +526,7 @@ public class jplNhanVien extends javax.swing.JPanel {
         listNV = sv.getAllNV();
         NhanVien nv = listNV.get(index);
         int id = nv.getId();
-        System.out.println("Nam" + id);
-        String maNV = nv.getMa();
+        String maNV = txtMa.getText();
         String ten = txtTen.getText();
         Date date1 = txtNgaySinh.getDate();
         System.out.println(date1);

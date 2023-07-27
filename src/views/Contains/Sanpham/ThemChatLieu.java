@@ -23,6 +23,7 @@ public class ThemChatLieu extends javax.swing.JFrame {
     public ThemChatLieu() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
     public void fillTable(){
         List<ChatLieu> list = sv.getAll();

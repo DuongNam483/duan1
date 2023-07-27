@@ -23,6 +23,7 @@ public class ThemMauSac extends javax.swing.JFrame {
     public ThemMauSac() {
         initComponents();
         fillTable();
+        setLocationRelativeTo(null);
     }
 
     public void fillTable() {
