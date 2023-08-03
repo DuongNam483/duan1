@@ -80,12 +80,8 @@ public class jplKhuyenMai extends javax.swing.JPanel {
         }
         if(ptg == 0){
             return "Phần trăm giảm không được để trống";
-        }
-        if(nbd == null){
-            return "Ngày bắt đầu không được để trống";
-        }
-        if(nkt == null){
-            return "Ngày kết thúc không được để trống";
+        }else if(ptg <= 0 || ptg >= 100){
+            return "Phần trăm giảm phải lớn hơn 0 và nhỏ hơn 100";
         }
         if(nbd.compareTo(nkt) > 0){
             return "Ngày bắt đầu phải trước ngày kết thúc";
@@ -170,6 +166,14 @@ public class jplKhuyenMai extends javax.swing.JPanel {
         jLabel7.setText("Ngày kết thúc:");
 
         jLabel8.setText("Mô tả:");
+
+        txtMa.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        txtTen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        txtPTG.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        txtMoTa.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -415,8 +419,16 @@ public class jplKhuyenMai extends javax.swing.JPanel {
         String ten = txtTen.getText();
         int ptg = Integer.parseInt(txtPTG.getText());
         Date d1 = txtNBD.getDate();
+        if(d1 == null){
+            JOptionPane.showMessageDialog(this, "Ngày bắt đầu không được để trống");
+            return;
+        }
         LocalDate nbd = d1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         Date d2 = txtNKT.getDate();
+        if(d2 == null){
+            JOptionPane.showMessageDialog(this, "Ngày kết thúc không được để trống");
+            return;
+        }
         LocalDate nkt = d2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         String moTa = txtMoTa.getText();
         String check = check(0, ma, ten, ptg, nbd, nkt, moTa);
@@ -443,8 +455,16 @@ public class jplKhuyenMai extends javax.swing.JPanel {
         String ten = txtTen.getText();
         int ptg = Integer.parseInt(txtPTG.getText());
         Date d1 = txtNBD.getDate();
+        if(d1 == null){
+            JOptionPane.showMessageDialog(this, "Ngày bắt đầu không được để trống");
+            return;
+        }
         LocalDate nbd = d1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         Date d2 = txtNKT.getDate();
+        if(d2 == null){
+            JOptionPane.showMessageDialog(this, "Ngày kết thúc không được để trống");
+            return;
+        }
         LocalDate nkt = d2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         String moTa = txtMoTa.getText();
         String check = check(id, ma, ten, ptg, nbd, nkt, moTa);

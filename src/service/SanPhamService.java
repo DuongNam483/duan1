@@ -16,9 +16,11 @@ public interface SanPhamService {
     List<ChiTietDep> getAll();
     List<SanPhamViewModel> getAllSPVMD();
     List<SanPhamViewModel> getFillterSPV(int idCL, int idD, int idLD, int idMS, int idNSX, int idSize);
+    ChiTietDep getByID(int id);
     ChiTietDep getCTDByMa(String ma);
     String add(ChiTietDep ctd);
     String update(ChiTietDep ctd);
+    String updateSL(int sl, int id);
     String delete(String ma);
     SanPhamViewModel getSPVMD(String ma);
 }

@@ -6,43 +6,37 @@ package models;
 
 import java.time.LocalDate;
 
-
-
 /**
  *
  * @author duong
  */
-public class NhanVien {
+public class KhachHang {
     private int id;
-    private int idCV;
     private String ma;
     private String ten;
     private LocalDate ngaySinh;
-    private String email;
+    private boolean gioiTinh;
     private String sdt;
-    private boolean gioiTinh; // 0 false Nam, 1 true Nữ
+    private String email;
     private String diaChi;
-    private String taiKhoan;
-    private String maKhau;
+    private int trangThai;
 
-    public NhanVien() {
+    public KhachHang() {
     }
 
-    
-
-    public NhanVien(int id, int idCV, String ma, String ten, LocalDate ngaySinh, String email, String sdt, boolean gioiTinh, String diaChi, String taiKhoan, String maKhau) {
+    public KhachHang(int id, String ma, String ten, LocalDate ngaySinh, boolean gioiTinh, String sdt, String email, String diaChi, int trangThai) {
         this.id = id;
-        this.idCV = idCV;
         this.ma = ma;
         this.ten = ten;
         this.ngaySinh = ngaySinh;
-        this.email = email;
-        this.sdt = sdt;
         this.gioiTinh = gioiTinh;
+        this.sdt = sdt;
+        this.email = email;
         this.diaChi = diaChi;
-        this.taiKhoan = taiKhoan;
-        this.maKhau = maKhau;
+        this.trangThai = trangThai;
     }
+
+   
 
     public int getId() {
         return id;
@@ -50,14 +44,6 @@ public class NhanVien {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdCV() {
-        return idCV;
-    }
-
-    public void setIdCV(int idCV) {
-        this.idCV = idCV;
     }
 
     public String getMa() {
@@ -84,12 +70,12 @@ public class NhanVien {
         this.ngaySinh = ngaySinh;
     }
 
-    public String getEmail() {
-        return email;
+    public boolean isGioiTinh() {
+        return gioiTinh;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setGioiTinh(boolean gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
 
     public String getSdt() {
@@ -100,12 +86,12 @@ public class NhanVien {
         this.sdt = sdt;
     }
 
-    public boolean isGioiTinh() {
-        return gioiTinh;
+    public String getEmail() {
+        return email;
     }
 
-    public void setGioiTinh(boolean gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getDiaChi() {
@@ -116,20 +102,17 @@ public class NhanVien {
         this.diaChi = diaChi;
     }
 
-    public String getTaiKhoan() {
-        return taiKhoan;
+    public int getTrangThai() {
+        return trangThai;
     }
 
-    public void setTaiKhoan(String taiKhoan) {
-        this.taiKhoan = taiKhoan;
+    public void setTrangThai(int trangThai) {
+        this.trangThai = trangThai;
     }
 
-    public String getMaKhau() {
-        return maKhau;
-    }
-
-    public void setMaKhau(String maKhau) {
-        this.maKhau = maKhau;
+    @Override
+    public String toString() {
+        return ten;
     }
     
 }

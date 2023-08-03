@@ -5,33 +5,33 @@
 package service.impl;
 
 import java.util.List;
-import models.NhanVien;
-import repository.NhanVienRepository;
-import service.NhanVienService;
+import models.KhachHang;
+import repository.KhachHangRepository;
+import service.KhachHangService;
 
 
-public class NhanVienServiceImpl implements NhanVienService {
+public class KhachHangServiceImpl implements KhachHangService {
 
-    private NhanVienRepository repo = new NhanVienRepository();
+    private KhachHangRepository repo = new KhachHangRepository();
     
     @Override
-    public List<NhanVien> getAllNV(){
+    public List<KhachHang> getAllNV(){
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        return repo.getAllNV();
+        return repo.getAll();
     }
 
     @Override
-    public NhanVien getNVByMa(String ma){
+    public KhachHang getNVByMa(String ma){
         return repo.getNVByMa(ma);
     }
     
     @Override
-    public List<NhanVien> getByTen(String ten){
+    public List<KhachHang> getByTen(String ten){
         return repo.getByTen(ten);
     }
     
     @Override
-    public String add(NhanVien c) {
+    public String add(KhachHang c) {
         boolean add = repo.add(c);
         if(add){
             return "Thêm thành công";
@@ -41,7 +41,7 @@ public class NhanVienServiceImpl implements NhanVienService {
     }
 
     @Override
-    public String update(NhanVien c) {
+    public String update(KhachHang c) {
         boolean update = repo.update(c);
         if(update){
             return "Sửa thành công";
@@ -59,6 +59,7 @@ public class NhanVienServiceImpl implements NhanVienService {
             return "Xóa thất bại";
         }
     }
+
 
 
     

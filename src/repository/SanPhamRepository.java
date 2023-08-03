@@ -34,6 +34,38 @@ public class SanPhamRepository {
                 + "NSX.ID = ChiTietDep.IdNSX and ChatLieu.ID = ChiTietDep.IdChatLieu and Size.ID = ChiTietDep.IdSize";
         return getSelectVMDBySQL(sql);
     }
+    public ChiTietDep getByID(int id){
+        ChiTietDep ctd = null;
+        try {
+            String sql = "select * from ChiTietDep where ID = ?";
+            Connection conn = DBConnection.openDbConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.execute();
+            
+            ResultSet rs = ps.getResultSet();
+            while(rs.next()){
+                int idSP = rs.getInt(1);
+                int idD = rs.getInt(2);
+                int idLD = rs.getInt(3);
+                int idS = rs.getInt(4);
+                int idMS = rs.getInt(5);
+                int idCL = rs.getInt(6);
+                int idNSX = rs.getInt(7);
+                String maCTD = rs.getString(8);
+                int sl = rs.getInt(9);
+                String moTa = rs.getString(10);
+                double giaNhap = rs.getDouble(11);
+                double giaBan = rs.getDouble(12);
+                ctd = new ChiTietDep(idSP, idD, idLD, idMS, idNSX, idCL, idS, maCTD, sl, moTa, giaNhap, giaBan);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        }
+        return ctd;
+    }
     public ChiTietDep getCTDByMa(String ma){
 //        listDep = new ArrayList<>();
 //        String sql = "select * from ChiTietDep where Ma = ?";
@@ -68,6 +100,17 @@ public class SanPhamRepository {
             
         }
         return ctd;
+    }
+    public boolean updateSL(int sl, int id){
+        String sql = "update ChiTietDep set SoLuong = ? where ID = ?";
+        try {
+            System.out.println("1." + id);
+            System.out.println("2." + sl);
+            DBConnection.ExcuteUpdate(sql, sl, id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
     public SanPhamViewModel getSPVMD(String ma){
         listSP = new ArrayList<>();

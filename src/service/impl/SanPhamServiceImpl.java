@@ -27,6 +27,11 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
     
     @Override
+    public ChiTietDep getByID(int id){
+        return repo.getByID(id);
+    }
+    
+    @Override
     public ChiTietDep getCTDByMa(String ma){
         return repo.getCTDByMa(ma);
     }
@@ -58,6 +63,16 @@ public class SanPhamServiceImpl implements SanPhamService {
         }
     }
 
+    @Override
+    public String updateSL(int sl, int id){
+        boolean update = repo.updateSL(sl, id);
+        if(update){
+            return "Sửa thành công.";
+        }else{
+            return "Sửa không thành công.";
+        }
+    }
+    
     @Override
     public String delete(String ma) {
         boolean delete = repo.delete(ma);

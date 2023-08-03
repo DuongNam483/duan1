@@ -87,13 +87,14 @@ public class NhanVienRepository {
         }
         return nv;
     }
-        public NhanVien getByTen(String ten){
+    public List<NhanVien> getByTen(String ten){
+        list = new ArrayList<>();
         NhanVien nv = null;
         try {
             Connection conn = DBConnection.openDbConnection();
-            String sql = "select * from NhanVien where Ten = ?";
+            String sql = "select * from NhanVien where Ten like ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, ten);
+            ps.setString(1, "%" + ten + "%");
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while(rs.next()){
@@ -110,6 +111,7 @@ public class NhanVienRepository {
                 String taiKhoan = rs.getString(10);
                 String mk = rs.getString(11);
                 nv = new NhanVien(id, idCV, maCTD, tenNV, ngaySinh, email, sdt, gioiTinh, diaChi,taiKhoan, mk);
+                list.add(nv);
             }
             
             
@@ -117,7 +119,7 @@ public class NhanVienRepository {
             //Logger.getLogger(GradeRepository.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();   
         }
-        return nv;
+        return list;
     }
     
     public boolean add(NhanVien ctd){

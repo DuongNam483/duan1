@@ -129,9 +129,9 @@ public class KhuyenMaiRepository {
                 Date d = rs.getDate(5);
                 LocalDate ngBD = d.toLocalDate();
                 Date d2 = rs.getDate(6);
-                LocalDate ngKT = d.toLocalDate();
-                String moTa = rs.getString(7);
-                int tt = rs.getInt(8);
+                LocalDate ngKT = d2.toLocalDate();
+                int tt = rs.getInt(7);
+                String moTa = rs.getString(8);
                 km = new KhuyenMai(id, ma, tenKM, ptg, ngBD, ngKT, moTa, tt);
                 list.add(km);
             }

@@ -5,17 +5,17 @@
 package service;
 
 import java.util.List;
-import models.NhanVien;
+import models.KhachHang;
 
 /**
  *
  * @author duong
  */
-public interface NhanVienService {
-    List<NhanVien> getAllNV();
-    NhanVien getNVByMa(String ma);
-    List<NhanVien> getByTen(String ten);
-    String add(NhanVien ctd);
-    String update(NhanVien ctd);
+public interface KhachHangService {
+    List<KhachHang> getAllNV();
+    KhachHang getNVByMa(String ma);
+    List<KhachHang> getByTen(String ten);
+    String add(KhachHang ctd);
+    String update(KhachHang ctd);
     String delete(String ma);
 }
